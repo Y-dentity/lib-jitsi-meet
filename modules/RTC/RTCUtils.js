@@ -21,6 +21,9 @@ const logger = getLogger(__filename);
 
 // console log suppressed
 // logger.setLevel('warn');
+if (window.loggingConfig.defaultLogLevel) {
+    logger.setLevel(window.loggingConfig.defaultLogLevel);
+}
 
 // Require adapter only for certain browsers. This is being done for
 // react-native, which has its own shims, and while browsers are being migrated

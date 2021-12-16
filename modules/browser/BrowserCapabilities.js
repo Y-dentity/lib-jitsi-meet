@@ -5,6 +5,9 @@ const logger = getLogger(__filename);
 
 // console log suppressed
 // logger.setLevel('warn');
+if (window.loggingConfig.defaultLogLevel) {
+    logger.setLevel(window.loggingConfig.defaultLogLevel);
+}
 
 /* Minimum required Chrome / Chromium version. This applies also to derivatives. */
 const MIN_REQUIRED_CHROME_VERSION = 72;
