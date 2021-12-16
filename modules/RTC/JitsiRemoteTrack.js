@@ -6,6 +6,9 @@ import JitsiTrack from './JitsiTrack';
 
 const logger = require('@jitsi/logger').getLogger(__filename);
 
+// console log suppressed
+logger.setLevel('warn');
+
 const RTCEvents = require('../../service/RTC/RTCEvents');
 
 let ttfmTrackerAudioAttached = false;
