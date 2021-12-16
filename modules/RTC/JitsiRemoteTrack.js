@@ -7,10 +7,10 @@ import JitsiTrack from './JitsiTrack';
 const logger = require('@jitsi/logger').getLogger(__filename);
 
 // console log suppressed
-logger.setLevel('warn');
-// if (window.loggingConfig.defaultLogLevel) {
-//     logger.setLevel(window.loggingConfig.defaultLogLevel);
-// }
+// logger.setLevel('warn');
+if (window.loggingConfig.defaultLogLevel) {
+    logger.setLevel(window.loggingConfig.defaultLogLevel);
+}
 
 const RTCEvents = require('../../service/RTC/RTCEvents');
 
