@@ -3,12 +3,6 @@ import { getLogger } from '@jitsi/logger';
 
 const logger = getLogger(__filename);
 
-// console log suppressed
-// logger.setLevel('warn');
-if (window.loggingConfig.defaultLogLevel) {
-    logger.setLevel(window.loggingConfig.defaultLogLevel);
-}
-
 /* Minimum required Chrome / Chromium version. This applies also to derivatives. */
 const MIN_REQUIRED_CHROME_VERSION = 72;
 const MIN_REQUIRED_SAFARI_VERSION = 14;
@@ -29,6 +23,13 @@ export default class BrowserCapabilities extends BrowserDetection {
      */
     constructor() {
         super();
+
+        // console log suppressed
+        // logger.setLevel('warn');
+        if (window.loggingConfig.defaultLogLevel) {
+            logger.setLevel(window.loggingConfig.defaultLogLevel);
+        }
+
         logger.info(
             `This appears to be ${this.getName()}, ver: ${this.getVersion()}`);
     }

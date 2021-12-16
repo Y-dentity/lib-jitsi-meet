@@ -6,12 +6,6 @@ import JitsiTrack from './JitsiTrack';
 
 const logger = require('@jitsi/logger').getLogger(__filename);
 
-// console log suppressed
-// logger.setLevel('warn');
-if (window.loggingConfig.defaultLogLevel) {
-    logger.setLevel(window.loggingConfig.defaultLogLevel);
-}
-
 const RTCEvents = require('../../service/RTC/RTCEvents');
 
 let ttfmTrackerAudioAttached = false;
@@ -69,6 +63,13 @@ export default class JitsiRemoteTrack extends JitsiTrack {
             },
             mediaType,
             videoType);
+
+        // console log suppressed
+        // logger.setLevel('warn');
+        if (window.loggingConfig.defaultLogLevel) {
+            logger.setLevel(window.loggingConfig.defaultLogLevel);
+        }
+
         this.rtc = rtc;
 
         // Prevent from mixing up type of SSRC which should be a number
