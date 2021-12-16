@@ -20,7 +20,7 @@ import screenObtainer from './ScreenObtainer';
 const logger = getLogger(__filename);
 
 // console log suppressed
-logger.setLevel('warn');
+// logger.setLevel('warn');
 
 // Require adapter only for certain browsers. This is being done for
 // react-native, which has its own shims, and while browsers are being migrated

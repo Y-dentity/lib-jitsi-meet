@@ -4,7 +4,7 @@ import { getLogger } from '@jitsi/logger';
 const logger = getLogger(__filename);
 
 // console log suppressed
-logger.setLevel('warn');
+// logger.setLevel('warn');
 
 /* Minimum required Chrome / Chromium version. This applies also to derivatives. */
 const MIN_REQUIRED_CHROME_VERSION = 72;
