@@ -30,3 +30,16 @@ npm run postinstall
 ```
 
 Both linting and units will also be done by a pre-commit hook.
+
+## Update
+
+```
+git remote add upstream git@github.com:jitsi/lib-jitsi-meet.git
+git remote -v
+```
+
+```
+git fetch upstream
+git merge upstream/master
+git push origin master
+```
