@@ -43,3 +43,7 @@ git fetch upstream
 git merge upstream/master
 git push origin master
 ```
+
+```
+npm install git+ssh://git@github.com/Y-dentity/lib-jitsi-meet.git --save
+```
