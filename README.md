@@ -35,7 +35,6 @@ Both linting and units will also be done by a pre-commit hook.
 
 ```
 git remote add upstream git@github.com:jitsi/lib-jitsi-meet.git
-git remote set-url --push upstream no_push
 git remote -v
 ```
 
