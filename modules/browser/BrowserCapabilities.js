@@ -26,7 +26,7 @@ export default class BrowserCapabilities extends BrowserDetection {
 
         // console log suppressed
         // logger.setLevel('warn');
-        if (window.loggingConfig.defaultLogLevel) {
+        if (window.loggingConfig && window.loggingConfig.defaultLogLevel) {
             logger.setLevel(window.loggingConfig.defaultLogLevel);
         }
 
