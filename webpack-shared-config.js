@@ -9,6 +9,9 @@ module.exports = (minimize, analyzeBundle) => {
     return {
         // The inline-source-map is used to allow debugging the unit tests with Karma
         devtool: minimize ? 'source-map' : 'inline-source-map',
+        resolve: {
+            extensions: [ '', '.js', '.ts' ]
+        },
         mode: minimize ? 'production' : 'development',
         module: {
             rules: [ {
@@ -49,10 +52,11 @@ module.exports = (minimize, analyzeBundle) => {
                                     safari: 14
                                 }
                             }
-                        ]
+                        ],
+                        '@babel/preset-typescript'
                     ]
                 },
-                test: /\.js$/
+                test: /\.(js|ts)$/
             } ]
         },
         node: {
