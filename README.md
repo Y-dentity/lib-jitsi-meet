@@ -46,6 +46,9 @@ git push origin master
 
 ```
 npm run build
+git add .
+git commit -a -m "update"
+git push
 ```
 
 ```

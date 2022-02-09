@@ -21,3 +21,6 @@ dist/esm
 !dist/umd/lib-jitsi-meet.min.js
 !dist/umd/lib-jitsi-meet.min.map
 !dist/umd/lib-jitsi-meet.e2ee-worker.js
+# !lib-jitsi-meet.min.js
+# !lib-jitsi-meet.min.map
+# !lib-jitsi-meet.e2ee-worker.js
