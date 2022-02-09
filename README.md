@@ -45,6 +45,10 @@ git push origin master
 ```
 
 ```
+npm run build
+```
+
+```
 npm uninstall lib-jitsi-meet
 npm install git+ssh://git@github.com/Y-dentity/lib-jitsi-meet.git --save
 ```
