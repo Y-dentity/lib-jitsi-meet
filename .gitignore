@@ -18,3 +18,6 @@ types/types-comparer/auto.json
 types/types-comparer/hand-crafted.json
 *.tgz
 dist/esm
+!dist/umd/lib-jitsi-meet.min.js
+!dist/umd/lib-jitsi-meet.min.map
+!dist/umd/lib-jitsi-meet.e2ee-worker.js
