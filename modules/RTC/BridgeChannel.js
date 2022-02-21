@@ -2,6 +2,7 @@ import { getLogger } from '@jitsi/logger';
 
 import RTCEvents from '../../service/RTC/RTCEvents';
 import { createBridgeChannelClosedEvent } from '../../service/statistics/AnalyticsEvents';
+import FeatureFlags from '../flags/FeatureFlags';
 import Statistics from '../statistics/statistics';
 import GlobalOnErrorHandler from '../util/GlobalOnErrorHandler';
 
@@ -372,6 +373,25 @@ export default class BridgeChannel {
                 if (videoConstraints) {
                     logger.info(`SenderVideoConstraints: ${JSON.stringify(videoConstraints)}`);
                     emitter.emit(RTCEvents.SENDER_VIDEO_CONSTRAINTS_CHANGED, videoConstraints);
+                }
+                break;
+            }
+            case 'SenderSourceConstraints': {
+                if (FeatureFlags.isSourceNameSignalingEnabled()) {
+                    const { sourceName, maxHeight } = obj;
+
+                    if (typeof sourceName === 'string' && typeof maxHeight === 'number') {
+                        // eslint-disable-next-line object-property-newline
+                        logger.info(`SenderSourceConstraints: ${JSON.stringify({ sourceName, maxHeight })}`);
+                        emitter.emit(
+                            RTCEvents.SENDER_VIDEO_CONSTRAINTS_CHANGED, {
+                                sourceName,
+                                maxHeight
+                            }
+                        );
+                    } else {
+                        logger.error(`Invalid SenderSourceConstraints: ${JSON.stringify(obj)}`);
+                    }
                 }
                 break;
             }
